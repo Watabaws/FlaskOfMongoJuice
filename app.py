@@ -4,18 +4,22 @@ import daytabays
 
 app = Flask(__name__)
 
-
 @app.route("/")
 def home():
     return render_template("index.html")
 
 @app.route("/results", methods=["GET", "POST"])
 def results():
-    print "nope nothing"
-    year = int(request.args['year'])
-    print year
-    movie = daytabays.get_year(year)
-    print "got movie"
+    if request.args["title"]:
+        movie = daytabays.get_title(request.args["title"])
+    elif request.args["director"]:
+        movie = daytabays.get_director(request.args["director"])
+    elif request.args['year']:
+        movie = daytabays.get_year(int(request.args['year']))
+    elif request.args["genre"]:
+        movie = daytabays.get_genre(request.args["genre"])
+    else:
+        return redirect(url_for("home"))
     return render_template("results.html", movie= movie)
     '''
     try:

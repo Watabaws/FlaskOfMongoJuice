@@ -12,5 +12,14 @@
       Search by Genre: <input name="genre" type="text" /> <br /><br />
       <input type="submit" />
     </form>
+    <br><br>
+    <p>
+      Our dataset is the wikipedia movie data, containing data on over 18 thousand movies, including the year they were made, their director and of course the title.</p>
+    <p>
+      To download this data, save it from this <a href="https://raw.githubusercontent.com/prust/wikipedia-movie-data/master/movies.json">link</a>
+    </p>
+    <p>
+      We use the urllib2 library to open and read the json. After loading it in, we then loop through it, converting the entries into Mongo usable listings. You can search through this data using by any one of the availible search fields.
+    </p>
   </body>
 </html>

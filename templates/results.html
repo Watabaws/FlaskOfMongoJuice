@@ -2,14 +2,28 @@
 <html>
   <head>
     <title> Results </title>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+      }
+    </style>
   </head>
   <body>
-    {% for item in movie %}
-      Title: {{item['title']}}<br />
-      Director: {{item['director']}}<br />
-      Year: {{item['year']}} <br />
-      Genre: {{item['genre']}}<br />
-      <br /><br /><br />
-    {% endfor %}
+    <table style="width:70%">
+      <tr>
+      <th>Title</th>
+      <th>Director</th>
+      <th>Year</th>
+      <th>Genre</th>
+      </tr>
+      {% for item in movie %}
+      <tr>
+        <td>{{item['title']}}</td>
+        <td>{{item['director']}}</td>
+        <td>{{item['year']}} </td>
+        <td>{{item['genre']}}</td>
+      </tr>
+      {% endfor %}
+    </table>
   </body>
 </html>
