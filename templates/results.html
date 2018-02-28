@@ -5,7 +5,11 @@
   </head>
   <body>
     {% for item in movie %}
-      {{item}}
+      Title: {{item['title']}}<br />
+      Director: {{item['director']}}<br />
+      Year: {{item['year']}} <br />
+      Genre: {{item['genre']}}<br />
+      <br /><br /><br />
     {% endfor %}
   </body>
 </html>
